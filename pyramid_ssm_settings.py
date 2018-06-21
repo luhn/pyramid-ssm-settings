@@ -9,7 +9,7 @@ def includeme(config):
     while True:
         kwargs = {
             'Path': path,
-            'WithDescription': True,
+            'WithDecryption': True,
         }
         if next_token:
             kwargs['NextToken'] = next_token

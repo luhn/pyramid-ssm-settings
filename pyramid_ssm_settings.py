@@ -1,9 +1,12 @@
+import os
 import boto3
 
 
 def includeme(config):
+    path = _get_path(config)
+    if not path:
+        return
     client = boto3.client('ssm')
-    path = config.get_settings()['ssm.path']
     next_token = None
     settings = dict()
     while True:
@@ -22,3 +25,13 @@ def includeme(config):
         else:
             break
     config.add_settings(settings)
+
+
+def _get_path(config):
+    settings = config.get_settings()
+    if 'ssm.path' in settings:
+        return settings['ssm.path']
+    elif 'SSM_PATH' in os.environ:
+        return os.environ['SSM_PATH']
+    else:
+        return None

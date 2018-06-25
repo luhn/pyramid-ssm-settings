@@ -6,7 +6,7 @@ REQUIRES = ['boto3']
 
 setup(
     name='pyramid-ssm-settings',
-    version='0.1.0',
+    version='0.1.1',
     description='Pull settings into Pyramid from Amazon EC2 Parameter Store.',
     long_description=open('README.rst').read(),
     license='MIT',

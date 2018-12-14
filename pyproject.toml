@@ -9,7 +9,7 @@ authors = ["Theron Luhn <theron@luhn.com>"]
 license = "MIT"
 classifiers = [
 	"Development Status :: 3 - Alpha",
-	"Programming Language :: Python :: 3",
+	"Framework :: Pyramid",
 ]
 
 [tool.poetry.dependencies]
